@@ -267,19 +267,22 @@ int delete_node(int num)
 	else if(n->left != NULL && n->right != NULL)
 	{
 		//1回左に降りる
-		p_n = p;
+		p_n = n;
 		p = n->left;
+		flag = true;
 		//右に降りていく
 		while (p->right != NULL)
 		{
 			p_n = p;
 			p = p->right;
+			flag = false;
 		}
 
 		//データ入れ替え
 		n->data = p->data;
 		//削除
-		p_n->right = NULL;
+		if (flag) p_n->left = NULL;
+		else p_n->right = NULL;
 	}
 	//子が1つの時
 	else
