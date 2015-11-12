@@ -225,7 +225,7 @@ int delete_node(int num)
 	}
 
 	//データ捜索
-	while(n == NULL && n->data == num)
+	while(n != NULL && n->data != num)
 	{
 		//削除したいデータが小さい時
 		if(n->data > num)
@@ -256,12 +256,11 @@ int delete_node(int num)
 		return -1;
 	}
 
-	//えらった
 	/* 削除 */
 	//子がない時
 	if(n->left == NULL && n->right == NULL)
 	{
-		if(flag) p_n->left = NULL;
+		if (flag) p_n->left = NULL;
 		else p_n->right = NULL;
 	}
 	//子が2つある時
@@ -269,9 +268,9 @@ int delete_node(int num)
 	{
 		//1回左に降りる
 		p_n = p;
-		p = p->left;
+		p = n->left;
 		//右に降りていく
-		while(p != NULL)
+		while (p->right != NULL)
 		{
 			p_n = p;
 			p = p->right;
