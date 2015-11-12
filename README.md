@@ -5,6 +5,9 @@ now coading.
 ##version  
 1.0 2015/11/12 upload first.
 
-1.1 debug now  
+1.1 debug  
   Insertまで実行出来る。  
-  Deleteが動作しない。
+  Deleteが動作しない。  
+
+1.2 last?  
+  全部実行可能。デバッグ終了。  
